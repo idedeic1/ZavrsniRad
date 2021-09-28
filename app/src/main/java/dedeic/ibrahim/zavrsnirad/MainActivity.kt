@@ -1,16 +1,18 @@
 package dedeic.ibrahim.zavrsnirad
 
+import android.content.BroadcastReceiver
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var picaAdapter: JeloListAdapter
 
     private lateinit var korpa_button: ImageButton
-    private lateinit var filterKategorije: Spinner
+    private lateinit var dodajJelo: Button
 
     private var jelaListViewModel =  JeloListViewModel()
 
@@ -38,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        filterKategorije = findViewById(R.id.filterKategorije)
+        dodajJelo = findViewById(R.id.dodajJelo)
         korpa_button = findViewById(R.id.korpaButton)
         predjela = findViewById(R.id.predjela)
         glavnaJela = findViewById(R.id.glavnaJela)
@@ -50,10 +52,10 @@ class MainActivity : AppCompatActivity() {
         dezerti.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         pica.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        predjelaAdapter = JeloListAdapter(listOf())
-        glavnaJelaAdapter = JeloListAdapter(listOf())
-        dezertiAdapter = JeloListAdapter(listOf())
-        picaAdapter = JeloListAdapter(listOf())
+        predjelaAdapter = JeloListAdapter(listOf()) { jelo -> showJeloDetails(jelo) }
+        glavnaJelaAdapter = JeloListAdapter(listOf()) { jelo -> showJeloDetails(jelo) }
+        dezertiAdapter = JeloListAdapter(listOf()) { jelo -> showJeloDetails(jelo) }
+        picaAdapter = JeloListAdapter(listOf()) { jelo -> showJeloDetails(jelo) }
 
         predjela.adapter = predjelaAdapter
         glavnaJela.adapter = glavnaJelaAdapter
@@ -66,10 +68,23 @@ class MainActivity : AppCompatActivity() {
         picaAdapter.updateJela(jelaListViewModel.getPica())
 
 
+
+        dodajJelo.setOnClickListener{
+            val intent = Intent(this, NovoJelo::class.java)
+            startActivity(intent)
+        }
+
         korpa_button.setOnClickListener{
             val intent = Intent(this, Korpa::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun showJeloDetails(jelo: Jelo) {
+        val intent = Intent(this, JeloDetail::class.java).apply {
+            putExtra("nazivJela", jelo.naziv)
+        }
+        startActivity(intent)
     }
 }
 

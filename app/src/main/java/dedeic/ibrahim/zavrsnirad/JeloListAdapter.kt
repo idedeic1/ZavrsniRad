@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class JeloListAdapter(
 
-    private var jela: List<Jelo>
+    private var jela: List<Jelo>,
+    private val onItemClicked: (jelo:Jelo) -> Unit
 ) : RecyclerView.Adapter<JeloListAdapter.JeloViewHolder>() {
 
     private lateinit var filterKategorije: Spinner
@@ -36,6 +37,7 @@ class JeloListAdapter(
         if (id == 0) id=context.getResources()
             .getIdentifier("picture1", "drawable", context.getPackageName())
         holder.jeloImage.setImageResource(id)
+        holder.itemView.setOnClickListener{ onItemClicked(jela[position]) }
     }
     fun updateJela(jela: List<Jelo>) {
         this.jela = jela

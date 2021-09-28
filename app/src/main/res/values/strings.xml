@@ -9,9 +9,27 @@
     <string name="naruci">Naruči </string>
     <string name="title_activity_korpa">Korpa</string>
     <string name="title_activity_naruci">Naruci</string>
+    <string name="title_activity_novoJelo">Novo Jelo</string>
+    <string name="title_activity_Jelo_detail">Detalji jela</string>
     <string name="povratak">Povratak na meni</string>
     <string name="uspjesnaNarudzba">Uspješno ste naručili! </string>
     <string name="KM"> KM</string>
+    <string name="dodaj"> Dodaj novo jelo </string>
+    <string name="sastav"> Sastav: </string>
+    <string name="opis"> Opis: </string>
+    <string name="kategorija"> Kategorija: </string>
+    <string name="cijena"> Cijena: </string>
+    <string name="sifra"> Šifra: </string>
+    <string name="naziv"> Naziv: </string>
+    <string name="potvrdi"> Potvrda </string>
+
+    <string-array name="Kategorije">
+        <item> Glavno jelo</item>
+        <item> Predjelo </item>
+        <item> Desert</item>
+        <item> Piće</item>
+    </string-array>
+
 
 
 
