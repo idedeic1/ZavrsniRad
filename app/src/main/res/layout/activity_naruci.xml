@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Naruci">
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="15dp">
+
+    </TableRow>
+
+    <ImageView
+        android:id="@+id/naruciSlika"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/correct_icon"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/textViewPredjela"
+        android:layout_width="398dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/uspjesnaNarudzba"
+        android:textSize="25sp"
+        android:layout_gravity="center"/>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="15dp">
+
+    </TableRow>
+
+    <Button
+        android:id="@+id/btn_povratak"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:text="@string/povratak"
+        android:textColor="@android:color/holo_orange_light"></Button>
+
+</LinearLayout>

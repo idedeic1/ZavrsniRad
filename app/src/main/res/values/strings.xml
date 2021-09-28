@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">eRestoran</string>
+    <string name="search">Pretražite jela</string>
+    <string name="glavnaJela">Glavna jela</string>
+    <string name="predjela">Predjela</string>
+    <string name="dezerti">Dezerti</string>
+    <string name="pica">Pića</string>
+    <string name="total">Total: </string>
+    <string name="naruci">Naruči </string>
+    <string name="title_activity_korpa">Korpa</string>
+    <string name="title_activity_naruci">Naruci</string>
+    <string name="povratak">Povratak na meni</string>
+    <string name="uspjesnaNarudzba">Uspješno ste naručili! </string>
+    <string name="KM"> KM</string>
+
+
+
+
+</resources>
