@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 
-
-
 class JeloListAdapter(
 
     private var jela: List<Jelo>,
@@ -23,9 +21,6 @@ class JeloListAdapter(
             .inflate(R.layout.iteam_jelo, parent, false)
         return JeloViewHolder(view)
     }
-
-
-
     override fun getItemCount(): Int = jela.size
     override fun onBindViewHolder(holder: JeloViewHolder, position: Int) {
         holder.jeloTitle.text = jela[position].naziv

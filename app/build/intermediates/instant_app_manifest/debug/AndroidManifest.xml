@@ -9,6 +9,8 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="29" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -20,6 +22,14 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name="dedeic.ibrahim.zavrsnirad.JeloDetail"
+            android:label="@string/title_activity_Jelo_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="dedeic.ibrahim.zavrsnirad.NovoJelo"
+            android:label="@string/title_activity_novoJelo"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="dedeic.ibrahim.zavrsnirad.Naruci"
             android:label="@string/title_activity_naruci"
@@ -35,11 +45,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service
-            android:name="androidx.room.MultiInstanceInvalidationService"
-            android:directBootAware="true"
-            android:exported="false" />
     </application>
 
 </manifest>
